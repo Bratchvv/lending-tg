@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    image: nginx
+    volumes:
+      - ./css:/usr/share/nginx/html/css
+      - ./fonts:/usr/share/nginx/html/fonts
+      - ./images:/usr/share/nginx/html/images
+      - ./script:/usr/share/nginx/html/script
+      - ./index.html:/usr/share/nginx/html/index.html
+    ports:
+      - "8080:80"
+    environment:
+      - NGINX_HOST=foobar.com
+      - NGINX_PORT=80
